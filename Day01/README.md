@@ -1,0 +1,7 @@
+Številčnica ima vrednosti od 0 do 99 in na začetku stojimo na 50. Vhodna datoteka input.txt vsebuje po en ukaz v vsaki vrstici, na primer L68 ali R48. Črka pove smer vrtenja, kjer L pomeni vrtenje levo proti manjšim številom, R pa vrtenje desno proti večjim. Številka za črko pove, za koliko klikov se zavrtimo.
+
+Pri vsakem ukazu najprej preberemo smer in razdaljo. Nato izračunamo novo pozicijo z aritmetiko modulo 100, saj se številčnica vrti v krogu. Če se po koncu vrtenja kazalec ustavi na 0, povečamo števec za prvi del. Rezultat prvega dela je torej število vseh rotacij, ki se končajo na 0.
+
+V drugem delu naloge nas ne zanimajo samo končni položaji, ampak vsak posamezen klik, pri katerem kazalec pride na 0. Da nam ne bi bilo treba simulirati vsakega klika posebej, si pri vsaki rotaciji izračunamo, kdaj prvič pridemo na 0. Če se vrtimo desno, je prvi klik na 0 po (100 - position) mod 100 korakih, če se vrtimo levo, pa po position korakih, oziroma po 100 korakih, če smo že na 0. Če je razdalja vrtenja vsaj toliko velika, potem vemo, da bomo 0 zadeli vsaj enkrat, število vseh zadetkov v tej rotaciji pa je 1 + (dist - s0) / 100. To vrednost prištejemo k skupnemu rezultatu drugega dela.
+
+Časovna zahtevnost algoritma ostane linearna, torej O(n), ker za vsak ukaz naredimo le konstantno količino računanja.

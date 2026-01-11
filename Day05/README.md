@@ -1,0 +1,7 @@
+Program najprej odpre vhodno datoteko in iz nje prebere seznam intervalov, ki so zapisani v obliki a-b. Te intervale shrani v vektor parov, kjer vsak par predstavlja spodnjo in zgornjo mejo intervala. Branje intervalov se zaključi, ko program naleti na prazno vrstico, kar pomeni, da se začne drugi del vhodnih podatkov.
+
+V prvem delu programa se nato berejo posamezni identifikatorji, pri čemer vsaka vrstica predstavlja eno število. Za vsak identifikator program preveri, ali spada v vsaj enega izmed prej prebranih intervalov. To naredi tako, da zaporedno pregleda vse intervale in preveri, ali je število znotraj njihovega območja. Če je pogoj izpolnjen, se identifikator upošteva in poveča rezultat prvega dela.
+
+V drugem delu programa je cilj določiti skupno število različnih vrednosti, ki jih pokrivajo vsi intervali skupaj. Najprej se intervali uredijo po naraščajočem vrstnem redu. Nato program postopoma združuje intervale, ki se prekrivajo ali se neposredno dotikajo. Pri tem vodi trenutno aktivni interval in ga po potrebi razširja. Ko naleti na interval, ki se ne prekriva s trenutnim, se dolžina trenutnega intervala prišteje k rezultatu in začne se obdelava novega intervala.
+
+Po obdelavi vseh intervalov se k rezultatu prišteje še dolžina zadnjega združenega intervala. Tako se zagotovi, da se prekrivajoča območja ne štejejo večkrat. Na koncu program izpiše rezultat prvega in drugega dela v ločenih vrsticah.

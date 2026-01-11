@@ -1,0 +1,7 @@
+Program najprej odpre vhodno datoteko in iz nje prebere vrstico, v kateri so zapisani intervali števil, ločeni z vejicami. Vsak interval je oblike a-b. Vrstica se postopoma razdeli na posamezne intervale, pri čemer se odstranijo morebitni presledki. Za vsak interval program prebere začetno in končno vrednost ter zaporedno obdela vsa števila med njima.
+
+Za preverjanje pravil iz prvega dela je uporabljena funkcija isInvalidPart1. Število se pretvori v niz znakov. Če ima niz liho dolžino, se takoj zavrne. V nasprotnem primeru se niz razdeli na dve polovici enake dolžine in preveri, ali sta polovici enaki. Če se znaki v obeh polovicah ujemajo, funkcija vrne, da je število neveljavno.
+
+Drugi del je rešen s funkcijo isInvalidPart2, ki prav tako pretvori število v niz. Nato preverja vse možne dolžine podnizov od 1 do polovice dolžine niza. Za vsako možno dolžino preveri, ali je celoten niz sestavljen iz več zaporednih ponovitev istega podniza. Če tak vzorec obstaja, je število označeno kot neveljavno.
+
+V glavni funkciji se za vsako število iz intervala preverita oba pogoja. Če je število neveljavno po prvem kriteriju, se prišteje k vsoti za prvi del, če pa je neveljavno po drugem kriteriju, se prišteje k vsoti za drugi del. Na koncu program izpiše obe izračunani vsoti

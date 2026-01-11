@@ -1,0 +1,9 @@
+Program najprej prebere vhodno datoteko in jo shrani v dvodimenzionalno mrežo znakov. Vsaka vrstica predstavlja eno vrstico mreže. Nato program poišče začetni položaj, označen z znakom S, iz katerega se začne simulacija. Če začetni položaj ne obstaja ali je mreža prazna, program izpiše ničelna rezultata in se zaključi.
+
+V prvem delu program simulira klasično širjenje žarka navzdol po mreži. Uporabi enodimenzionalni vektor, ki označuje, v katerih stolpcih je žarek trenutno prisoten. Na začetku je žarek prisoten le v stolpcu, kjer se nahaja znak S. Nato program vrstico za vrstico prehaja navzdol. Če žarek v določeni celici naleti na znak ^, se šteje zadetek in žarek se razcepi v levo in desno smer v naslednji vrstici. Če je v celici kateri koli drug znak, žarek nadaljuje naravnost navzdol. Na ta način program prešteje skupno število zadetkov v prvem delu.
+
+Drugi del naloge je rešen z dinamičnim programiranjem. Ideja je, da se izračuna število vseh možnih časovnih linij oziroma poti, po katerih lahko žarek zapusti mrežo. Definirana je tabela dp, kjer element dp[r][c] predstavlja število možnih poti, če žarek vstopi v celico (r, c) od zgoraj. Kot robni pogoj velja, da izhod iz mreže pomeni eno veljavno pot.
+
+Tabela se izračuna od spodaj navzgor. Če je v celici znak ^, se žarek razcepi in število poti predstavlja vsoto poti iz levega in desnega spodnjega soseda. Če je v celici kateri koli drug znak, žarek nadaljuje naravnost navzdol in število poti se prenese iz spodnje celice. Ko je tabela izpolnjena, je končni rezultat drugega dela enak številu poti, ki izhajajo iz celice neposredno pod začetnim položajem S.
+
+Na koncu program izpiše rezultat prvega in drugega dela v ločenih vrsticah.
